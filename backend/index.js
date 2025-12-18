@@ -1,12 +1,13 @@
-const express = require("express")
-const app = express()
+import express from "express";
+import add from "./server.js"
 
+const app = express();
 
 app.get("/", (req, res) => {
-  res.send("Hello, World!")
+  res.send("Import is working!");
+});
 
-})
-
-app.listen(500,()=> {
-    console.log("Server is running...")
-})
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
+  console.log(add(2,3));
+});
