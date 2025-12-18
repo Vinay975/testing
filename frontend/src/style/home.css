@@ -1,0 +1,63 @@
+.home-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Button colors */
+.add {
+  background-color: #28a745;
+}
+
+.delete {
+  background-color: #dc3545;
+}
+
+.update {
+  background-color: #ffc107;
+  color: black;
+}
+
+.find {
+  background-color: #007bff;
+}
+
+.content {
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.hint {
+  color: #777;
+  font-weight: normal;
+}
