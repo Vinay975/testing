@@ -3,21 +3,21 @@ import mongoose, { model }  from "mongoose"
 const userSchema = new mongoose.Schema({
     name : {
         type:String,
-        require:true
+        required:true
     },
     email : {
         type:String,
-        require:true
+        required:true
     },
     phone : {
         type:Number,
-        require:true
+        required:true
     },
     age : {
         type:Number,
-        require:true
+        required:true
     }
 })
 
-const userData = mongoose.model("user",userSchema);
-export default userData
+const User = mongoose.model("user",userSchema);
+export default User
