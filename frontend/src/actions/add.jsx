@@ -15,22 +15,21 @@ const Add = () => {
         const key = e.target.name;
         const value = e.target.value;
 
-        setData({...data, [key]:value})
+        setData({ ...data, [key]: value })
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const res = await axios.post("http://localhost:3000/api/user/adduser",data)
+            const res = await axios.post("http://localhost:3000/api/user/adduser", data)
             console.log(data)
             alert(res.data.message);
+            alert("data saved")
         }
-        catch(err) {
+        catch (err) {
             console.log(err)
         }
-
-        alert("data saved")
         setData({
             name: "",
             email: "",
@@ -39,7 +38,7 @@ const Add = () => {
         })
     }
 
-    return(
+    return (
         <>
             <form onSubmit={handleSubmit}>
                 <label>Enter name : </label>
@@ -56,13 +55,17 @@ const Add = () => {
                     value={data.email}
                     onChange={handleChange}
                     required={true}
-                /><br/>
+                /><br />
                 <label> Phone No : </label>
-                <input type="number"
+                <input
+                    type="text"
                     name="phone"
                     value={data.phone}
+                    maxLength={10}
                     onChange={handleChange}
-                    required={true}
+                    pattern="[0-9]{10}"
+                    placeholder="10-digit phone"
+                    required
                 /><br />
                 <label>Age : </label>
                 <input type="number"
@@ -71,9 +74,9 @@ const Add = () => {
                     onChange={handleChange}
                     required={true}
                 />
-               <button 
-                type="submit">
-                Add Data</button>
+                <button
+                    type="submit">
+                    Add Data</button>
             </form>
         </>
     )
